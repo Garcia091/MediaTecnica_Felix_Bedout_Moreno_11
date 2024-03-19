@@ -1,0 +1,14 @@
+body{
+    background: lightgray;
+    text-align: center;
+    font-size: 32px;
+    margin-top: 5%;
+}
+
+button{
+    padding: 10px;
+    color: white;
+    background-color: red;
+    font-size: 20px;
+    margin: 10px 5px;
+}
