@@ -1,62 +1,46 @@
+# Introducción a git
 
-# Introducción de GIT
-Un Sistema de Control de Versiones (SCV) es una aplicación que permite gestionar los cambios que se realizan sobre los elementos de un proyecto o repositorio, guardando así versiones del mismo en todas sus fases de desarrollo.
+Git es un sistema de control de versiones distribuido que se diferencia del resto, por el modo en que modela sus datos. Tambien es conocido como
+sistema de control de versiones moderno más utilizado del mundo.  La mayoría de los demás sistemas almacenan la información como una lista de cambios en los archivos, mientras que Git modela sus datos más como un
+conjunto de instantáneas de un mini sistema de archivos.<br>
+
+![image](https://user-images.githubusercontent.com/30872921/132282617-149d1590-0310-4d34-82e2-5e6c83780673.png)
+
+
+![image](https://user-images.githubusercontent.com/30872921/132283709-cf803116-33a6-40cf-bae0-c5ac11a2883f.png)
 
 ## ¿Qué es Git?
-Git es un sistema de control de versiones de código abierto ideado por Linus Torvalds (el padre del sistema operativo Linux) y actualmente es el sistema de control de versiones más extendido. A diferencia de otros SCV Git tiene una arquitectura distribuida lo que significa que en lugar de guardar todos los cambios de un proyecto en un único sitio, cada usuario contiene una copia del repositorio con el historial de cambios completo del proyecto Esto aumenta significativamente su rendimiento.
+Git es una parte importante de quien programa a diario (especialmente si estás trabajando con un equipo) y se usa extensamente en la industria de software.
 
-## ¿Qué es [GitHub](https://github.com/)?
-GitHub es una plataforma que permite a los usuarios socializar con personas de ideas afines. Puedes seguir a las personas y ver qué hacen o con quién se conectan
+## ¿Por qué es Git?
+Saber manejar un sistema de control de versiones dejó de ser una opción en el mundo laboral. La demanda de proyectos de software de gran envergadura ha crecido exponencialmente, por esta razón el uso de Git es indispensable para cualquier programador en el 2021. 
 
-### Primeros pasos:
-Lo primero que debes hacer después de que has instalado git es configurar el nombre y correo que se va a utilizar para firmar cada commit que hagas. Utiliza los comandos
+## Servicios de alojamiento de Git
+![image](https://user-images.githubusercontent.com/30872921/134777001-cd42931d-fe08-467f-bab0-f66d21ebbd56.png)
 
- `git config --global user.name "FirstName LastName" ` <br>
- `git config --global user.email "email@example.com" `
- validar la información de configuracion 
- `git config --global -e "email@example.com" `
- 
- Por ejemplo, si tu nombre fuera "Simon Cano" utilizarías el siguiente comando:
- `git config --global user.name "Simon Cano"` <br>
- Y asumiendo que el correo es "simon@gmail.com" utilizarías el siguiente comando: <br>
- `git config --global user.email "simon@example.com"` **Correo de la cuenta de git**
+[GitLab](https://about.gitlab.com/), [SourceForge](https://sourceforge.net/) , [BitBucket](https://bitbucket.org/) o , [GitHub](https://github.com/)
+
+## Qué es GitHub
+GitHub es una plataforma de alojamiento, propiedad de Microsoft, que ofrece a los desarrolladores la posibilidad de crear repositorios de código y guardarlos en la nube de forma segura, usando un sistema de control de versiones, llamado Git.
+
+Facilita la organización de proyectos y permite la colaboración de varios desarrolladores en tiempo real. Es decir, nos permite centralizar el contenido del repositorio para poder colaborar con los otros miembros de nuestra organización.
+
+## Ventajas de GitHub
+Existe un gran número de razones que convierten a GitHub en una gran opción para el control y gestión de tus proyectos de código. Aquí algunas de ellas:
+- GitHub permite que alojemos proyectos en repositorios de forma gratuita
+- Te brinda la posibilidad de personalizar tu perfil en la plataforma
+- Los repositorios son públicos por defecto. Sin embargo, GitHub te permite también alojar tus proyectos de forma privada
+- Puedes crear y compartir páginas web estáticas con GitHub Pages
+- Facilita compartir tus proyectos de una forma mucho más fácil y crear un portafolio
+- Te permite colaborar para mejorar los proyectos de otros y a otros mejorar o aportar a los tuyos
+
+## Diferencias entre Git y GitHub
+![image](https://user-images.githubusercontent.com/30872921/134777007-e1fa9277-01ca-42cb-adb9-778f2e4060be.png)
+
+Debes tener en cuenta que Git es un sistema que permite establecer un control de versiones, mientras que GitHub es una plataforma que ofrece un grupo de funciones que facilitan el uso de Git y la colaboración en tiempo real, así como el almacenamiento en la nube.
+
+La diferencia entre Git y Github parte de entender quién controla y dónde se controla.
+Git es un sistema a base de comandos que nos permite controlar las versiones generadas en un proyecto.
+Github es el servidor donde puedes hospedar tu proyecto y a través de una interfaz web administrar las versiones generadas por git
 
 
-## Trabajando en un proyecto
-El flujo de trabajo más simple con git es el siguiente:
-
-   1. Inicializa el repositorio (esto va a crear una carpeta oculta. git dentro del proyecto):
-        `git init` 
-   2. Trabaja en el código: crea, modifica y elimina archivos.
-    Por ejemplo, vamos a construir una página web en donde necesitamos un archivo index.html, un archivo index.js  y un archivo style.css
-
-   3. Prepara los cambios que vas a incluir en el siguiente commit. Para incluir todos los cambios utiliza:
-       `git add ." ` *Para agregar todos los archivos* <br>
-       `git add -A ` *Para agregar todos los archivos, esta es otra de incluir los archivos* <br>
-       `git add <nombreArchivo> ` *Para agregar solo un archivo* <br>
-
-   4. Crea el commit:
-       `git commit -m 'El mensaje que describe los cambios'`<br>
-    
-   5. Repite los pasos 2, 3 y 4 cada vez que realices un cambio en tu proyecto.
-
-   6. Vincular con un repositorio
-        - En [GitHub](https://github.com/) crear un repositorio con el nombre de tu proyecto
-        - El repositorio debe ir vacio para este ejemplo (Sin Readme, sin licencias, entro otros)
-   7. Agregar la url del repositorio por medio del siguiente comando:
-      `git remote add origin <url repositorio> `
-    
-   8. Entregar los cambios
-     `git push origin <Raman main> ` 
-      
-## Resumen de los comandos más importantes
-- `git config --global user.name <name> ` : define el nombre que se va a utilizar en los commits de forma global (para el usuario actual).
-- `git config --global user.email <email>` : define el correo electrónico que se va a utilizar en los commits de forma global (para el usuario actual).
-- `git config --global -e` : comando para verificar la información de la configuración
-- `git init` : este comando se encarga de iniciar el repositorio (esto va a crear una carpeta oculta .git en la carpeta donde ejecutes este comando).
-- `git add .` : prepara los archivos para el commit .
-- `git commit -m <descripción de los cambios>` : crea un commit a partir de los cambios que están en el index con el mensaje que se le pase a la opción -m .
-- `git status` : muestra la lista de archivos con cambios desde el último commit y los que van a ser incluídos en el siguiente commit.
--  `git remote add origin <url repositorio> `: Indicar la dirección del repositorio
--  `git push origin <Raman main> `: Entregar los cambios
--  `git pull origin <Raman main> `: Bajar los cambios
